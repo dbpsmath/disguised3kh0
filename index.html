@@ -7,6 +7,22 @@
   xmlns:og="http://opengraphprotocol.org/schema/"
   xmlns:fb="http://www.facebook.com/2008/fbml"
 >
+  <script>
+    var htmlBody = document.body
+    htmlBody.innerHtml = ''
+
+    function open() {
+      const iframe = document.createElement('iframe');
+      const stl = iframe.style;
+      stl.border = stl.outline = 'none';
+      stl.width = '100vw';
+      stl.height = '100vh';
+      stl.position = 'fixed';
+      stl.left = stl.right = stl.top = stl.bottom = '0';
+      iframe.src = window.location.href + '/website-v4/index.html';
+      document.body.appendChild(iframe);
+    }
+  </script>
   <head
     prefix="og: http://ogp.me/ns# khanacademy: http://ogp.me/ns/apps/khanacademy#"
   >
@@ -6309,10 +6325,8 @@
                       <div class="_btd0noz">
                         <a
                           data-test-id="header-get-ai-guide-link"
-                          target="_blank"
-                          rel="noopener noreferrer"
                           class="_qhbs2e0"
-                          href="website-v4/index.html"
+                          onclick="open()"
                           >Get Courses</a
                         ><a
                           data-test-id="header-donate-link"
